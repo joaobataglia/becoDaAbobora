@@ -10,6 +10,7 @@ body {
   background-color: var(--purple);
   color: var(--white);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 nav {
@@ -82,6 +83,21 @@ section.hero {
   width: fit-content;
 }
 
+@keyframes pulseRotate {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+  }
+
+  50% {
+    transform: scale(1.05) rotate(5deg);
+  }
+}
+
+.hero-content .image-container img {
+  animation: pulseRotate 3s ease-in-out infinite;
+  will-change: transform; 
+}
+
 .hero-content h2 {
   font-family: "Creepster", system-ui;
   font-size: 8rem;
@@ -125,7 +141,7 @@ section.hero {
 section.details {
   padding: 5rem 2rem;
   background: var(--orange);
-  background-image: url("./assets/images/pumpkin-vector.png");
+  background-image: url("../assets/images/pumpkin-vector.png");
   background-repeat: no-repeat;
   background-position: 0%;
   background-size: contain;
