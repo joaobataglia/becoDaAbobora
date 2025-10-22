@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seu Ingresso — Doces ou Travessuras 2025</title>
+    <link rel="stylesheet" href="../styles/fonts.css" />
+    <link rel="stylesheet" href="../styles/ticket.css" />
+    <script src="../scripts/ticket-generator.js" defer></script>
+  </head>
+  <body>
+    <button class="back" onclick="window.location.href='/'">← Voltar</button>
+
+    <section class="ticket-page">
+      <h2>Ingresso Reservado!</h2>
+      <p id="ticket-text"></p>
+
+      <div id="ticket-container" class="ticket-container">
+        <canvas id="ticket-canvas"></canvas>
+      </div>
+
+      <div class="buttons">
+        <a id="pix-link" href="https://nubank.com.br/cobrar/1c2iu8/68f83c63-57d2-4bab-8095-c9d99f7d8daf" target="_blank">Pagar Ingresso (R$25)</a>
+        <a href="#pix-link" id="download-link" download="ticket.png">Baixar Ingresso</a>
+      </div>
+    </section>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      const userName = sessionStorage.getItem("name") || "Visitante Misterioso";
+      const quantity = "1";
+
+      document.getElementById("ticket-text").textContent = `${
+        userName.split(" ")[0]
+      }, seu ingresso foi reservado! Finalize o pagamento para validar seu convite`;
+      document.getElementById("pix-link").textContent = `Pagar Ingresso (R$${25 * quantity})`;
+    </script>
+  </body>
+</html>
