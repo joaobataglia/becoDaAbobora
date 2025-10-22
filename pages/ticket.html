@@ -15,27 +15,26 @@
     <section class="ticket-page">
       <h2>Ingresso Reservado!</h2>
       <p id="ticket-text"></p>
-
+      
       <div id="ticket-container" class="ticket-container">
-        <canvas id="ticket-canvas"></canvas>
+         <canvas id="ticket-canvas"></canvas>
       </div>
 
+      <div id="details" class="details">
+         <h3>Detalhes do Evento</h3>
+         <ul>
+            <li><strong>Data:</strong> 31/10</li>
+            <li><strong>Início:</strong> 19h</li>
+            <li><strong>Término:</strong> 1h</li>
+            <li><strong>Local:</strong> Rua Ceará, 1646</li>
+            <li><strong>Bairro:</strong> Campos Elíseos</li>
+         </ul>
+      </div>
+      
       <div class="buttons">
         <a id="pix-link" href="https://nubank.com.br/cobrar/1c2iu8/68f83c63-57d2-4bab-8095-c9d99f7d8daf" target="_blank">Pagar Ingresso (R$25)</a>
         <a href="#pix-link" id="download-link" download="ticket.png">Baixar Ingresso</a>
       </div>
     </section>
-
-    <script>
-      const params = new URLSearchParams(window.location.search);
-
-      const userName = sessionStorage.getItem("name") || "Visitante Misterioso";
-      const quantity = "1";
-
-      document.getElementById("ticket-text").textContent = `${
-        userName.split(" ")[0]
-      }, seu ingresso foi reservado! Finalize o pagamento para validar seu convite`;
-      document.getElementById("pix-link").textContent = `Pagar Ingresso (R$${25 * quantity})`;
-    </script>
   </body>
 </html>

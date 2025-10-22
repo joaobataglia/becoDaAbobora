@@ -89,6 +89,14 @@ function createTicketImage(username, date, price, validationNumber, raceId, race
   };
 }
 
+const userName = sessionStorage.getItem("name");
+
+document.getElementById("ticket-text").textContent = `${
+   userName.split(" ")[0]
+}, seu ingresso foi reservado! Finalize o pagamento para validar seu convite`;
+document.getElementById("pix-link").textContent = `Pagar Ingresso (R$25)`;
+
+const quantity = "1";
 const date = "31/10/2025";
 const price = quantity * 25;
 const eventName = "Beco da Abóbora";
