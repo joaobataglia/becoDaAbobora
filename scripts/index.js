@@ -5,5 +5,5 @@ submitButton.addEventListener("click", (e) => {
 
   sessionStorage.setItem("name", name);
 
-  window.location.href = `../pages/ticket.html`;
+  window.location.href = `./pages/ticket.html`;
 });
