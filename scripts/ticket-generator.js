@@ -38,10 +38,10 @@ function createTicketImage(username, date, price, validationNumber, raceId, race
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${validationNumber}`;
     const qrCodeImage = new Image();
 
-    var numeroIngresso = sessionStorage.getItem("ticketNumber");
+    var numeroIngresso = localStorage.getItem("ticketNumber");
     if (!numeroIngresso) {
       numeroIngresso = Math.floor(Math.random() * 100);
-      sessionStorage.setItem("ticketNumber", numeroIngresso);
+      localStorage.setItem("ticketNumber", numeroIngresso);
     }
 
     qrCodeImage.crossOrigin = "Anonymous"; // Ensures the image can be used on the canvas
@@ -89,7 +89,7 @@ function createTicketImage(username, date, price, validationNumber, raceId, race
   };
 }
 
-const userName = sessionStorage.getItem("name");
+const userName = localStorage.getItem("name");
 
 document.getElementById("ticket-text").textContent = `${
    userName.split(" ")[0]

@@ -1,10 +1,10 @@
 const submitButton = document.getElementById("get-tickets");
-const userName = sessionStorage.getItem("name");
+const userName = localStorage.getItem("name");
 
 submitButton.addEventListener("click", (e) => {
    if (!userName) {
       const name = document.getElementById("name").value;
-      sessionStorage.setItem("name", name); 
+      localStorage.setItem("name", name); 
    }
    
    window.location.href = `./pages/ticket.html`;
